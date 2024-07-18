@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="form-container">
+    <h2>Profile</h2>
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.username.label(class="form-control-label") }}
+            {{ form.username(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.email.label(class="form-control-label") }}
+            {{ form.email(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.picture.label(class="form-control-label") }}
+            {{ form.picture(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+    <hr>
+    <h3>Bitcoin Address</h3>
+    <p>{{ current_user.bitcoin_address }}</p>
+    <h3>Balance</h3>
+    <p>EUR: {{ bitcoin_balance_eur }}</p>
+    <p>BTC: {{ bitcoin_balance_btc }}</p>
+</div>
+{% endblock %}

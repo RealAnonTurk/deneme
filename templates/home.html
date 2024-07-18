@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Anasayfa{% endblock %}
+{% block content %}
+    <h1>Ürünler</h1>
+    {% for product in products %}
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/' ~ product.image_file) }}" alt="{{ product.title }}">
+            <div class="product-details">
+                <h2>{{ product.title }}</h2>
+                <p>{{ product.description[:150] }}</p>
+                <p class="price">Fiyat: €{{ product.price }} / BTC</p>
+                <button class="buy-btn">Satın Al</button>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

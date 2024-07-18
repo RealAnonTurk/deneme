@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Delete Product{% endblock %}
+{% block content %}
+<div class="form-container">
+    <h2>Delete Product</h2>
+    <form method="POST" action="">
+        <ul>
+            {% for product in products %}
+            <li>
+                {{ product.title }}
+                <button type="submit" name="product_id" value="{{ product.id }}">SIL</button>
+            </li>
+            {% endfor %}
+        </ul>
+    </form>
+</div>
+{% endblock %}

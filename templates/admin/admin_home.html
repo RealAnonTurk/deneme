@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Admin Home{% endblock %}
+{% block content %}
+<h2>Products</h2>
+<ul>
+    {% for product in products %}
+    <li>{{ product.title }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('add_product') }}">Add Product</a>
+<a href="{{ url_for('delete_product') }}">Delete Product</a>
+<a href="{{ url_for('admin_users') }}">View Users</a>
+{% endblock %}
